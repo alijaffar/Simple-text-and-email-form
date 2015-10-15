@@ -53,7 +53,7 @@
 			  <div class="form-group">
 				<label for="from" class="col-sm-2 control-label">From</label>
 				<div class="col-sm-10">
-				  <input type="text" class="form-control" name="from" placeholder="Your Email" required />
+				  <input type="email" class="form-control" name="from" placeholder="Your Email" required />
 				</div>
 			  </div>
 										
