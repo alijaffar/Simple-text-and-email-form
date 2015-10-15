@@ -49,7 +49,7 @@
 	else: // display form if no submission
 ?>
 
-			<form class="form-horizontal" action="send.php" method="POST">
+			<form class="form-horizontal" action="<?=$_SERVER['SCRIPT_NAME']?>" method="POST">
 
 			  <div class="form-group">
 				<label for="from" class="col-sm-2 control-label">From</label>
