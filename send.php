@@ -11,18 +11,18 @@
   </style>
 </head>
 <body>
- <div class="row">
-	<div class="col-sm-12">
-	  <div class="container">
+ <div class="container">
+	<div class="row">
+	  <div class="col-sm-12">
 		<h1>Simple Email/Text Contact Form by <a href="http://twitter.com/ali_jaffar">@ali_jaffar</a></h1>
 		<hr />
 	  </div>
 	</div>
  </div>
 
- <div class="row">
-	<div class="col-sm-12">
-	  <div class="container">	
+ <div class="container">
+	<div class="row">
+		<div class="col-sm-12">
 <?php	
   error_reporting(0); //mute PHP errors, turn on for debugging
 	$max_chars = 100; // for subject & message -- this gets set in JS below, as well as in the <textarea maxlength=""
@@ -49,72 +49,66 @@
 	else: // display form if no submission
 ?>
 
-                        <form class="form-horizontal" action="send.php" method="POST">
+			<form class="form-horizontal" action="send.php" method="POST">
 
-                          <div class="form-group">
-                            <label for="from" class="col-sm-2 control-label">From</label>
-                            <div class="col-sm-10">
-                              <input type="text" class="form-control" name="from" placeholder="Cell or Email (Optional)" />
-                            </div>
-                          </div>
-                                                    
-                          <div class="form-group">
-                            <label for="subject" class="col-sm-2 control-label">Subject</label>
-                            <div class="col-sm-10">
-                              <textarea class="form-control" name="subject" id="t1" placeholder="Subject (Optional)" rows="1" maxlength="<?=$max_chars?>"></textarea>
-                              <small id="char_count"></small> 
-                            </div>
-                          </div>
+			  <div class="form-group">
+				<label for="from" class="col-sm-2 control-label">From</label>
+				<div class="col-sm-10">
+				  <input type="text" class="form-control" name="from" placeholder="Cell or Email (Optional)" />
+				</div>
+			  </div>
+										
+			  <div class="form-group">
+				<label for="subject" class="col-sm-2 control-label">Subject</label>
+				<div class="col-sm-10">
+				  <textarea class="form-control" name="subject" id="t1" placeholder="Subject (Optional)" rows="1" maxlength="<?=$max_chars?>"></textarea>
+				  <small id="char_count"></small> 
+				</div>
+			  </div>
 
-                          <div class="form-group">
-                            <label for="from" class="col-sm-2 control-label">Message</label>
-                            <div class="col-sm-10">
-                              <textarea class="form-control" name="message" id="message" value="" placeholder="Message" maxlength="<?=$max_chars?>" required rows="4" onkeyup="countChar(this)"></textarea>
-                              <small id="rev_char_count"></small>
-                              
-                            </div>
-                          </div>
-                          
-                          <hr />
-                                                                              
-                          <div class="form-group">
-                            <label for="to" class="col-sm-2 control-label">To</label>
-                            <div class="col-sm-10">
-                              <input type="text" class="form-control" name="to" placeholder="Cell or Email" required />
-                            </div>
-                          </div>
+			  <div class="form-group">
+				<label for="from" class="col-sm-2 control-label">Message</label>
+				<div class="col-sm-10">
+				  <textarea class="form-control" name="message" id="message" value="" placeholder="Message" maxlength="<?=$max_chars?>" required rows="4" onkeyup="countChar(this)"></textarea>
+				  <small id="rev_char_count"></small>
+				  
+				</div>
+			  </div>
+			  
+			  <hr />
+																  
+			  <div class="form-group">
+				<label for="to" class="col-sm-2 control-label">To</label>
+				<div class="col-sm-10">
+				  <input type="text" class="form-control" name="to" placeholder="Cell or Email" required />
+				</div>
+			  </div>
 
-                          <div class="form-group">
-                            <label for="carrier" class="col-sm-2 control-label">Carrier?</label>
-                            <div class="col-sm-10">
-                                <select name="carrier" class="form-control">
-                                    <option value="" selected>No, just an E-mail.</option>
-                                    <option value="@txt.att.net ">ATT</option>
+			  <div class="form-group">
+				<label for="carrier" class="col-sm-2 control-label">Carrier?</label>
+				<div class="col-sm-10">
+					<select name="carrier" class="form-control">
+						<option value="" selected>No, just an E-mail.</option>
+						<option value="@txt.att.net ">ATT</option>
 
-                                    <option value="@myboostmobile.com">Boost Mobile</option>
-                                    <option value="@mymetropcs.com">Metro PCS</option>
-                                    <option value="@messaging.sprintpcs.com">Sprint</option>
-                                    <option value="@tmomail.net">T-Mobile</option>
-                                    <option value="@vtext.com">Verizon Wireless</option>    
-                                    <option value="@vmobl.com">Virgin Mobile</option>
-                                </select>                              
-                            </div>
-                          </div>                          
+						<option value="@myboostmobile.com">Boost Mobile</option>
+						<option value="@mymetropcs.com">Metro PCS</option>
+						<option value="@messaging.sprintpcs.com">Sprint</option>
+						<option value="@tmomail.net">T-Mobile</option>
+						<option value="@vtext.com">Verizon Wireless</option>    
+						<option value="@vmobl.com">Virgin Mobile</option>
+					</select>                              
+				</div>
+			  </div>                          
 
-                         <div class="form-group">
-                           <div class="col-sm-offset-2 col-sm-10">
-                             <button type="submit" class="btn btn-primary" />Send it <span class="glyphicon glyphicon-send" aria-hidden="true"></span></button>
-                           </div>
-                         </div>                            
-                            
-                        </form>                  
+			 <div class="form-group">
+			   <div class="col-sm-offset-2 col-sm-10">
+				 <button type="submit" class="btn btn-primary" />Send it <span class="glyphicon glyphicon-send" aria-hidden="true"></span></button>
+			   </div>
+			 </div>                            
+				
+			</form>                  
                         
-                    </div> <!-- /COL -->
-                </div> <!-- /ROW -->
-                
-            </div> <!-- / PAGE-INNER -->
-        </div> <!-- /PAGE-WRAPPER -->
-        
   <script type="text/javascript">
   	$('textarea').on('input propertychange', function() {
   		var ctrl =$(this),
@@ -144,8 +138,8 @@
   </script>  
   
   <?php endif; //end the if condition which displays the form if it wasn't previously submitted ?>
-	  </div> <!-- /container -->
-	</div> <!-- /col -->
-  </div> <!-- /row -->
+	  </div> <!-- /col -->
+	</div> <!-- /row -->
+  </div> <!-- /container -->
 </body>
 </html>
