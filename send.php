@@ -42,9 +42,13 @@
 			'Reply-To: '.$from.'' . "\r\n" .
 			'X-Mailer: PHP/' . phpversion();
 				
-		mail($to, $subject, $message, $headers);
-		
-		echo '<div class="alert alert-success" role="alert">Success, sent!</div>';
+		// mail($to, $subject, $message, $headers);
+
+		if( @mail($to, $subject, $message, $headers) ) :
+		  echo '<div class="alert alert-success" role="alert">Success, sent!</div>';
+		else:
+		  echo '<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Error. Enter a valid e-mail. <a href="" onclick="window.location.href=window.location.href;">Retry.</a></div>';
+		endif;
 		
 	else: // display form if no submission
 ?>
